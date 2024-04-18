@@ -1,0 +1,18 @@
+{
+  "name": "socialmediasync-pro",
+  "version": "1.0.0",
+  "description": "SocialMediaSync Pro - Cross-platform social media synchronization tool",
+  "author": "PHPJourney <info@pay.futbol>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build:backend": "cd backend && go build -o ../dist/socialmediasync-pro-backend",
+    "build:electron": "cd frontend/electron && npm ci && npm run build && npm run dist",
+    "build:mobile": "cd frontend/mobile && npm ci && npx react-native run-ios && npx react-native run-android",
+    "build:all": "npm-run-all --serial build:backend build:electron build:mobile",
+    "clean": "rm -rf dist/*"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
